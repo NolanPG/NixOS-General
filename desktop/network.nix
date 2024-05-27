@@ -69,6 +69,9 @@
     };
   };
 
+  # create_ap (WiFi HotSpot) entropy daemon
+  services.haveged.enable = true;
+
   # Enabling SSH
   services.openssh = {
     enable = true;
