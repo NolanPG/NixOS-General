@@ -9,7 +9,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../common/common.nix
+      ../../common/common.nix
       ./network.nix
       ./gaming.nix
       ./vfio.nix
