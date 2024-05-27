@@ -9,7 +9,6 @@ let
     "1002:ab28" # Audio
   ];
 in {
-
   options.vfio.enable = with lib;
     mkEnableOption "Configure the machine for VFIO";
 
@@ -29,15 +28,29 @@ in {
         ("vfio-pci.ids=" + lib.concatStringsSep "," gpuIDs);
     };
 
-    hardware.opengl.enable = true;
-    virtualisation.spiceUSBRedirection.enable = true;
-
     environment.systemPackages = with pkgs; [
       # Apps for VFIO
       looking-glass-client
       virt-manager
     ];
-  };
 
+    specialisation."VFIO".configuration = {
+      system.nixos.tags = [ "with-vfio" ];
+      vfio.enable = true;
+    };
+
+    virtualisation.libvirtd = {
+      enable = true;
+      qemu.ovmf.enable = true;
+      qemu.runAsRoot = false;
+      onBoot = "ignore";
+      onShutdown = "shutdown";
+    };
+
+    users.users.nolan.extraGroups = [ "libvirtd" ];
+
+    hardware.opengl.enable = true;
+    virtualisation.spiceUSBRedirection.enable = true;
+  };
   # Added libvirtd and apps for the virtual machine in configuration.nix
 }
