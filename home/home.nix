@@ -58,7 +58,7 @@
 
   programs.kitty = {
     enable = true;
-    font.name = "MesloGS NF";
+    font.name = "MesloLGS NF";
     font.package = pkgs.meslo-lgs-nf;
     font.size = 11;
     theme = "Dracula";
