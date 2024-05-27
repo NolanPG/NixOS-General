@@ -22,9 +22,6 @@
 
   # Enabling Bluetooth
   hardware.bluetooth.enable = true;
-  
-  # Enabling touchpad support
-  services.libinput.enable = true;
 
   # Use the systemd-boot EFI boot loader.
   boot = {
@@ -163,27 +160,6 @@
     # Firefox dependencies
     ffmpeg_7-full
     mailcap # Helper application and MIME type associations for file types
-
-    # Overriding vscode with vscodium package to manage its extensions declaratively
-    (vscode-with-extensions.override {
-      vscode = vscodium;
-      vscodeExtensions = with vscode-extensions; [
-        jnoortheen.nix-ide
-        ms-python.python
-        ms-python.vscode-pylance
-        catppuccin.catppuccin-vsc
-        pkief.material-product-icons
-
-        #CPP
-        ms-vscode.cpptools
-        adpyke.codesnap
-        oderwat.indent-rainbow
-
-        #RUST
-        rust-lang.rust-analyzer
-        vadimcn.vscode-lldb
-      ];
-    })
 
   ];
 
