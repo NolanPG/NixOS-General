@@ -105,17 +105,25 @@
 
   environment.systemPackages = with pkgs; [
     libsForQt5.kservice # kbuildsycoca5
+    kdePackages.sddm-kcm # sddm settings module
+    libreoffice-qt-fresh
+
     distrobox
 
     # Packages normally included in other distros by default
     lshw 
     wget
+    git
+    gh
+    fastfetch
 
     qdirstat # App for managing disk space usage
 
     kdePackages.appstream-qt # libsForQt5 is replaced by kdePackages to keep coherence for Plasma 6 naming
 
     # peazip # Free Zip / Unzip software and Rar file extractor. Cross-platform file and archive manager.
+
+    direnv # program recommended for nix
 
     # Ark Extraction dependencies
     libarchive
@@ -132,40 +140,30 @@
     virtualgl
     clinfo
 
-    # create_ap (WiFi HotSpot) entropy daemon
-    haveged
-
-    # obs-studio dependencies
-    pciutils
-    rnnoise
-    mesa
-    fdk-aac-encoder
-    rav1e
-
     # Firefox dependencies
     ffmpeg_7-full
     mailcap # Helper application and MIME type associations for file types
 
     # Overriding vscode with vscodium package to manage its extensions declaratively
-    (vscode-with-extensions.override {
-      vscode = vscodium;
-      vscodeExtensions = with vscode-extensions; [
-        jnoortheen.nix-ide
-        ms-python.python
-        ms-python.vscode-pylance
-        catppuccin.catppuccin-vsc
-        pkief.material-product-icons
+    # (vscode-with-extensions.override {
+    #   vscode = vscodium;
+    #   vscodeExtensions = with vscode-extensions; [
+    #     jnoortheen.nix-ide
+    #     ms-python.python
+    #     ms-python.vscode-pylance
+    #     catppuccin.catppuccin-vsc
+    #     pkief.material-product-icons
 
-        #CPP
-        ms-vscode.cpptools
-        adpyke.codesnap
-        oderwat.indent-rainbow
+    #     #CPP
+    #     ms-vscode.cpptools
+    #     adpyke.codesnap
+    #     oderwat.indent-rainbow
 
-        #RUST
-        rust-lang.rust-analyzer
-        vadimcn.vscode-lldb
-      ];
-    })
+    #     #RUST
+    #     rust-lang.rust-analyzer
+    #     vadimcn.vscode-lldb
+    #   ];
+    # })
 
     # Apps for VFIO
     looking-glass-client

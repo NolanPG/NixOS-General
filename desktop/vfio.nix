@@ -31,6 +31,12 @@ in {
 
     hardware.opengl.enable = true;
     virtualisation.spiceUSBRedirection.enable = true;
+
+    environment.systemPackages = with pkgs; [
+      # Apps for VFIO
+      looking-glass-client
+      virt-manager
+    ];
   };
 
   # Added libvirtd and apps for the virtual machine in configuration.nix
