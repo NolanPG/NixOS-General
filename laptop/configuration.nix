@@ -13,16 +13,6 @@
       ./gaming.nix
     ];
 
-  # Enabling network
-  networking = {
-    networkmanager.enable = true;
-    wireless.dbusControlled = true;
-    wireless.allowAuxiliaryImperativeNetworks = true;
-  };
-
-  # Enabling Bluetooth
-  hardware.bluetooth.enable = true;
-
   # Use the systemd-boot EFI boot loader.
   boot = {
     # Setting latest stable Linux Kernel from nixpkgs
