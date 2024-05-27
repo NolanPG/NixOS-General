@@ -23,7 +23,7 @@
     in {
 
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      laptop = lib.nixosSystem {
         inherit system;
         modules = [ ./hosts/laptop/default.nix ];
       };
