@@ -16,7 +16,16 @@
     protonup-qt
     winetricks
     wineWowPackages.waylandFull
+    
     obs-studio
+    
+    # obs-studio dependencies
+    pciutils
+    rnnoise
+    mesa
+    fdk-aac-encoder
+    rav1e
+    
     kdePackages.kdenlive
     handbrake
     i2c-tools # OpenRGB dependency
