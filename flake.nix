@@ -20,17 +20,18 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
+      allowUnfree = { nixpkgs.config.allowUnfree = true; };
     in {
 
     nixosConfigurations = {
       laptop = lib.nixosSystem {
         inherit system;
-        modules = [ ./laptop/configuration.nix ];
+        modules = [ ./laptop/configuration.nix  allowUnfree ];
       };
 
       desktop = lib.nixosSystem {
         inherit system;
-        modules = [ ./desktop/configuration.nix ];
+        modules = [ ./desktop/configuration.nix allowUnfree ];
       };
     };
 
