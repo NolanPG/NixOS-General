@@ -56,15 +56,19 @@
     # '')
   ];
 
-    programs.kitty = {
+  programs.kitty = {
     enable = true;
     font.name = "MesloGS NF";
     font.package = pkgs.meslo-lgs-nf;
     font.size = 11;
     theme = "Dracula";
-    extraConfig = "background_opacity .7";
+    extraConfig = "
+      background_opacity .7
+      confirm_os_window_close 0
+    ";
     shellIntegration.enableZshIntegration = true;
   };
+
 
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
