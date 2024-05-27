@@ -10,6 +10,7 @@
     [
       ./hardware-configuration.nix
       ./battery-life.nix
+      ./touchpad.nix
       ./gaming.nix
     ];
 
