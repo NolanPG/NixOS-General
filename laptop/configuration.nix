@@ -9,7 +9,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      /home/nolan/.dotfiles/common/common.nix
+      ../common/common.nix
       ./battery-life.nix
       ./touchpad.nix
       ./gaming.nix
