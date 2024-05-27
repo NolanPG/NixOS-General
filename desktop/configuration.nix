@@ -27,7 +27,6 @@
       grub = {
         enable = true;
         devices = [ "nodev" ];
-        useOSProber = true;
         efiSupport = true;
       };
 
@@ -143,32 +142,6 @@
     # Firefox dependencies
     ffmpeg_7-full
     mailcap # Helper application and MIME type associations for file types
-
-    # Overriding vscode with vscodium package to manage its extensions declaratively
-    # (vscode-with-extensions.override {
-    #   vscode = vscodium;
-    #   vscodeExtensions = with vscode-extensions; [
-    #     jnoortheen.nix-ide
-    #     ms-python.python
-    #     ms-python.vscode-pylance
-    #     catppuccin.catppuccin-vsc
-    #     pkief.material-product-icons
-
-    #     #CPP
-    #     ms-vscode.cpptools
-    #     adpyke.codesnap
-    #     oderwat.indent-rainbow
-
-    #     #RUST
-    #     rust-lang.rust-analyzer
-    #     vadimcn.vscode-lldb
-    #   ];
-    # })
-
-    # Apps for VFIO
-    looking-glass-client
-    virt-manager
-
   ];
 
   virtualisation.libvirtd = {
