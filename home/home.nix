@@ -63,7 +63,7 @@
     font.size = 11;
     theme = "Tokyo Night";
     extraConfig = "
-      background_opacity .7
+      background_opacity .85
       confirm_os_window_close 0
     ";
     shellIntegration.enableZshIntegration = true;
