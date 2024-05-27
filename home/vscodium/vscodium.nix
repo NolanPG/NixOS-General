@@ -4,7 +4,7 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = with vscode-extensions; [
+    extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         ms-python.python
         ms-python.vscode-pylance
