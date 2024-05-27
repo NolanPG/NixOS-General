@@ -18,8 +18,9 @@
     wineWowPackages.waylandFull
     obs-studio
     kdePackages.kdenlive
+    handbrake
     i2c-tools # OpenRGB dependency
-];
+  ];
 
   # RGB Configuration
   services.hardware.openrgb = {
