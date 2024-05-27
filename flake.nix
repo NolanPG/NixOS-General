@@ -23,7 +23,7 @@
     in {
 
     nixosConfigurations = {
-      laptop = lib.nixosSystem {
+      nixos = lib.nixosSystem {
         inherit system;
         modules = [ ./laptop/configuration.nix ];
       };
