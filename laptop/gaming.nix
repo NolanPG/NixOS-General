@@ -6,12 +6,13 @@
 }:
 
 {
-    environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     bottles # Wine manager
     protonup-qt
     wineWowPackages.waylandFull
     obs-studio
     kdePackages.kdenlive
+    handbrake
   ];
 
   hardware = {
