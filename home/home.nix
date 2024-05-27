@@ -61,7 +61,7 @@
     font.name = "MesloLGS NF";
     font.package = pkgs.meslo-lgs-nf;
     font.size = 11;
-    theme = "Dracula";
+    theme = "Tokyo Night";
     extraConfig = "
       background_opacity .7
       confirm_os_window_close 0
