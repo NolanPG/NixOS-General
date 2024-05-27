@@ -9,9 +9,10 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../common/common.nix
+      ../../common/common.nix
       ./battery-life.nix
       ./touchpad.nix
+      ./network.nix
       ./gaming.nix
     ];
 
