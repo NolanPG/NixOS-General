@@ -19,7 +19,8 @@
   outputs = { 
     self, 
     nixpkgs, 
-    home-manager, 
+    home-manager,
+    nixvim,
     ... 
     }:
 
@@ -44,7 +45,14 @@
     homeConfigurations = {
       nolan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/home.nix ];
+        modules = [ 
+          ./home/home.nix 
+
+          nixvim.homeManagerModules.nixvim
+          ./home/neovim.nix
+
+          ./home/vscodium/vscodium.nix
+        ];
       };
     };
   };
