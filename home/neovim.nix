@@ -4,6 +4,8 @@
   programs.nixvim = {
     enable = true;
 
+    globals.mapleader = ","; # Sets the leader key to comma
+
     # Theme
     colorschemes.tokyonight.enable = true;
 
