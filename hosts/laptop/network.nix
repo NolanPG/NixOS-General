@@ -24,10 +24,6 @@
       allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
     };
 
-  # Enabling Bluetooth
-  hardware.bluetooth.enable = true;
-
-
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -65,16 +61,16 @@
   };
 
   # Creating a WiFi HotSpot that launches on startup, note that doesn't appear in Plasma System Tray Network utility
-  networking.interfaces.wlan0.useDHCP = true; # DHCP is needed for wlan0 to be visible in other devices
-  services.create_ap = {
-    enable = true;
-    settings = {
-      INTERNET_IFACE = "enp8s0";
-      WIFI_IFACE = "wlan0";
-      SSID = "nolan-nixos";
-      PASSPHRASE = "awsqd1e23";
-    };
-  };
+  # networking.interfaces.wlan0.useDHCP = true; # DHCP is needed for wlan0 to be visible in other devices
+  # services.create_ap = {
+  #   enable = true;
+  #   settings = {
+  #     INTERNET_IFACE = "enp8s0";
+  #     WIFI_IFACE = "wlan0";
+  #     SSID = "nolan-nixos";
+  #     PASSPHRASE = "awsqd1e23";
+  #   };
+  # };
 
   # Enabling SSH
   services.openssh = {

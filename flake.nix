@@ -32,12 +32,12 @@
     nixosConfigurations = {
       laptop = lib.nixosSystem {
         inherit system;
-        modules = [ ./laptop/configuration.nix ];
+        modules = [ ./hosts/laptop/default.nix ];
       };
 
       desktop = lib.nixosSystem {
         inherit system;
-        modules = [ ./desktop/configuration.nix ];
+        modules = [ ./hosts/desktop/default.nix ];
       };
     };
 
