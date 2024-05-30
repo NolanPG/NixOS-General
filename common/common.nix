@@ -204,16 +204,6 @@
         };
       };
 
-      # Configuring FireFox
-      firefox = {
-        package = pkgs.firefox;
-        enable = true;
-        preferences = {
-          "widget.use-xdg-desktop-portal.file-picker" = 1;
-        };
-      };
-    };
-
   nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
 
   # Aliases
