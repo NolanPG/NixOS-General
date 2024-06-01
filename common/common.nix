@@ -39,8 +39,8 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # Uncomment this to use JACK applications
-    # jack.enable = true;
+    jack.enable = true; # a professional sound server daemon
+    wireplumber.enable = true; # session and policy manager for PipeWire
   };
 
   # Set your time zone.
