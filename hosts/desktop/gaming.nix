@@ -8,6 +8,7 @@
 {
   environment.systemPackages = with pkgs; [
     bottles # Wine manager
+    heroic
     ryujinx # Nintendo Switch emulator
     sunshine # Remote gaming solution for streaming games over the internet
     goverlay

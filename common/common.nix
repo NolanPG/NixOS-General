@@ -117,6 +117,7 @@
     kdePackages.appstream-qt # libsForQt5 is replaced by kdePackages to keep coherence for Plasma 6 naming
 
     # peazip # Free Zip / Unzip software and Rar file extractor. Cross-platform file and archive manager.
+    lutris
 
     direnv # program recommended for nix
 
@@ -216,7 +217,7 @@
     config-nixos = "codium /home/nolan/.dotfiles";
 
     # switch-nixos rebuilds NixOS using system-wide configuration, then rebuilds home using home.nix and finally it refreshes KDE app cache (icons in app launcher)
-    switch-nixos = "sudo nixos-rebuild switch --flake /home/nolan/.dotfiles && home-manager switch -b backup switch --flake /home/nolan/.dotfiles && kbuildsycoca6";
+    switch-nixos = "sudo nixos-rebuild switch --flake /home/nolan/.dotfiles && home-manager switch -b backup --flake /home/nolan/.dotfiles && kbuildsycoca6";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
