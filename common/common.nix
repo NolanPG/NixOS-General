@@ -62,6 +62,9 @@
   # Plasma 6 as the DE, for the time being it is only available in NixOS Unstable
   services.desktopManager.plasma6.enable = true;
 
+  # GTK appmenu dependency
+  chaotic.appmenu-gtk3-module.enable = true;
+
   # Enabling Xorg even though I use Wayland because some Xorg apps had troubles with XWayland support (Not sure about that)
   services.xserver.enable = true;
   programs.xwayland.enable = true;
