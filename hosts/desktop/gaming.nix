@@ -41,11 +41,6 @@
   boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
   users.groups.i2c.members = [ "nolan" ]; # create i2c group and add default user to it
 
-  hardware = {
-    steam-hardware.enable = true;
-    # xpadneo.enable = true;
-  };
-
   # Enable gamemode
   programs.gamemode = {
     enable = true;
@@ -64,11 +59,6 @@
 
   # improvement for games using lots of mmaps (same as steam deck)
   boot.kernel.sysctl = {"vm.max_map_count" = 2147483642;};
-
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
 
   #Enable Gamescope
   programs.gamescope = {
