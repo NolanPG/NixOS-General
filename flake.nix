@@ -1,5 +1,5 @@
 {
-  description = "General usage flake";
+  description = "General porpuse flake";
 
   inputs = {
     # NixOS System
@@ -8,12 +8,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     # Neovim
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Chaotic (Bleeding edge packages)
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }
   };
 
   outputs = { 
@@ -21,6 +25,7 @@
     nixpkgs, 
     home-manager,
     nixvim,
+    chaotic,
     ... 
     }:
 
@@ -38,7 +43,10 @@
 
       desktop = lib.nixosSystem {
         inherit system;
-        modules = [ ./hosts/desktop/default.nix ];
+        modules = [ 
+          ./hosts/desktop/default.nix 
+          chaotic.nixosModules.default
+        ];
       };
     };
 
