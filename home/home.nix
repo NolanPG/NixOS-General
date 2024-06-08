@@ -39,6 +39,7 @@
     qalculate-qt
     btop
     git
+    lazygit
     gh # GitHub CLI Tool
     python3
     papirus-icon-theme
