@@ -16,7 +16,7 @@
     osu-lazer-bin
     protonup-qt
     winetricks
-    wineWowPackages.waylandFull
+    wineWowPackages.stagingFull
     
     obs-studio
     
