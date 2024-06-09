@@ -38,7 +38,10 @@
     nixosConfigurations = {
       laptop = lib.nixosSystem {
         inherit system;
-        modules = [ ./hosts/laptop/default.nix ];
+        modules = [ 
+          ./hosts/laptop/default.nix 
+          chaotic.nixosModules.default
+        ];
       };
 
       desktop = lib.nixosSystem {
