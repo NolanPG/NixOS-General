@@ -28,7 +28,8 @@
     rav1e
     
     kdePackages.kdenlive
-    handbrake
+    xevd
+    # handbrake # ffmpeg 7 full is temporalily broken
     i2c-tools # OpenRGB dependency
   ];
 

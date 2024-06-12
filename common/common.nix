@@ -140,7 +140,6 @@
     clinfo
 
     # Firefox dependencies
-    ffmpeg_7
     mailcap # Helper application and MIME type associations for file types
   ];
 
