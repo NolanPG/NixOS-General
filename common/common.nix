@@ -63,7 +63,7 @@
   services.desktopManager.plasma6.enable = true;
 
   # GTK appmenu dependency
-  chaotic.appmenu-gtk3-module.enable = true;
+  # chaotic.appmenu-gtk3-module.enable = true; # This is giving a strange error at the moment when building
 
   # Enabling Xorg even though I use Wayland because some Xorg apps had troubles with XWayland support (Not sure about that)
   services.xserver.enable = true;
@@ -140,6 +140,7 @@
     clinfo
 
     # Firefox dependencies
+    ffmpeg-full # ffmpeg 6, ffmpeg 7 full is temporalily
     mailcap # Helper application and MIME type associations for file types
   ];
 
