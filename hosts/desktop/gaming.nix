@@ -30,7 +30,7 @@
     
     kdePackages.kdenlive
 
-    pkgs-stable.handbrake # ffmpeg 7 full is temporalily broken in the unstable channel
+    pkgs-stable.handbrake # ffmpeg 7 full is temporarily broken in the unstable channel
     i2c-tools # OpenRGB dependency
   ];
 
