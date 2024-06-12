@@ -4,15 +4,19 @@
   inputs = {
     # NixOS System
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     # Neovim
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     # Chaotic (Bleeding edge packages)
     chaotic = {
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
@@ -22,7 +26,8 @@
 
   outputs = { 
     self, 
-    nixpkgs, 
+    nixpkgs,
+    nixpkgs-stable,
     home-manager,
     nixvim,
     chaotic,
@@ -36,8 +41,9 @@
     in {
 
     nixosConfigurations = {
-      laptop = lib.nixosSystem {
+      laptop = lib.nixosSystem rec {
         inherit system;
+
         modules = [ 
           ./hosts/laptop/default.nix 
           chaotic.nixosModules.default
@@ -46,10 +52,23 @@
 
       desktop = lib.nixosSystem {
         inherit system;
+
         modules = [ 
           ./hosts/desktop/default.nix 
           chaotic.nixosModules.default
         ];
+
+        specialArgs = {
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
       };
     };
 

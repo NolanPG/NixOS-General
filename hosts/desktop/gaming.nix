@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   lib,
   user,
   ...
@@ -28,8 +29,8 @@
     rav1e
     
     kdePackages.kdenlive
-    xevd
-    # handbrake # ffmpeg 7 full is temporalily broken
+
+    pkgs-stable.handbrake # ffmpeg 7 full is temporalily broken in the unstable channel
     i2c-tools # OpenRGB dependency
   ];
 
