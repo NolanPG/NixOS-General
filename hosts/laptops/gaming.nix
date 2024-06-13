@@ -12,7 +12,6 @@
     wineWowPackages.waylandFull
     obs-studio
     kdePackages.kdenlive
-    handbrake
   ];
 
   hardware = {
