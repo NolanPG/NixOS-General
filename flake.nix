@@ -45,7 +45,7 @@
         inherit system;
 
         modules = [ 
-          ./hosts/laptops/yoga/default.nix 
+          ./hosts/laptops/ideapad/default.nix 
           chaotic.nixosModules.default
         ];
       };

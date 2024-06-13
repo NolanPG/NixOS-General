@@ -8,12 +8,12 @@
 {
   imports =
     [
+      ../../../common/common.nix
+      ../battery-life.nix
+      ../touchpad.nix
+      ../gaming.nix
       ./hardware-configuration.nix
-      ../../common/common.nix
-      ./battery-life.nix
-      ./touchpad.nix
       ./network.nix
-      ./gaming.nix
     ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
