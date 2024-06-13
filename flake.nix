@@ -45,7 +45,16 @@
         inherit system;
 
         modules = [ 
-          ./hosts/laptop/default.nix 
+          ./hosts/laptops/yoga/default.nix 
+          chaotic.nixosModules.default
+        ];
+      };
+
+      laptop-yoga = lib.nixosSystem rec {
+        inherit system;
+
+        modules = [ 
+          ./hosts/laptops/yoga/default.nix 
           chaotic.nixosModules.default
         ];
       };
