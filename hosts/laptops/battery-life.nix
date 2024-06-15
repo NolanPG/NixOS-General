@@ -15,7 +15,6 @@
       useStockConfig = true;
     };
 
-    power-profiles-daemon.enable = true;
     auto-cpufreq = {
       enable = true;
       settings = {
