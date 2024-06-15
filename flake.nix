@@ -87,8 +87,8 @@
         modules = [ 
           ./home/home.nix 
 
-          nixvim.homeManagerModules.nixvim # error: gdtoolkit has been renamed to gdtoolkit_3 to distinguish from version 4
-          ./home/neovim.nix
+          #nixvim.homeManagerModules.nixvim # error: gdtoolkit has been renamed to gdtoolkit_3 to distinguish from version 4
+          #./home/neovim.nix
 
           ./home/vscodium/vscodium.nix
         ];
