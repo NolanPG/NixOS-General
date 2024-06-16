@@ -17,6 +17,8 @@
     ];
 
     environment.systemPackages = with pkgs; [
+      libinput
+      libinput-gestures
       twingate
     ];
 
