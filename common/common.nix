@@ -117,7 +117,9 @@
 
     qdirstat # App for managing disk space usage
 
+    # KDE Plasma dependencies
     kdePackages.appstream-qt # libsForQt5 is replaced by kdePackages to keep coherence for Plasma 6 naming
+    kdePackages.kmix # Volume control, unstable version 24.05.0 is marked as broken, using it anyway
 
     # peazip # Free Zip / Unzip software and Rar file extractor. Cross-platform file and archive manager.
     lutris
