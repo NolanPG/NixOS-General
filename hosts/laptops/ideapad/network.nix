@@ -75,6 +75,8 @@
   # Enabling SSH
   services.openssh = {
     enable = true;
+
+    settings.PasswordAuthentication = true;
   };
 
   # Enabling xRDP for session sharing

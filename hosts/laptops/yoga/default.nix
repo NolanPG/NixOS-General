@@ -16,13 +16,6 @@
       ./network.nix
     ];
 
-  # Stating system's gpu driver, not needed in some cases
-  services.xserver.videoDrivers = [ "intel" ];
-  
-  services.xserver = {
-    desktopManager.gnome.enable = true;
-  };
-
     hardware.sensor.iio.enable = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
