@@ -74,7 +74,6 @@
           pkgs-stable = import nixpkgs-stable {
             inherit system;
             config.allowUnfree = true; 
-            config.allowBroken = true; # TODO remove this when kmix gets 'fixed'
           };
 
           pkgs = import nixpkgs {
