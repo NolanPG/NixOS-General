@@ -119,6 +119,8 @@
 
     # KDE Plasma dependencies
     kdePackages.appstream-qt # libsForQt5 is replaced by kdePackages to keep coherence for Plasma 6 naming
+    gsettings-qt # Dependency for sound management
+    gsettings-desktop-schemas
 
     # peazip # Free Zip / Unzip software and Rar file extractor. Cross-platform file and archive manager.
     lutris
