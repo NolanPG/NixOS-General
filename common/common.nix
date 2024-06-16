@@ -32,8 +32,8 @@
 
   # Enabling SOUND
   # sound.enable = true;
-  # hardware.pulseaudio.enable = false;
-  # security.rtkit.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -60,7 +60,7 @@
   };
 
   # Plasma 6 as the DE, for the time being it is only available in NixOS Unstable
-  services.desktopManager.plasma6.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
   # GTK appmenu dependency
   # chaotic.appmenu-gtk3-module.enable = true; # This is giving a strange error at the moment when building
@@ -68,9 +68,6 @@
   # Enabling Xorg even though I use Wayland because some Xorg apps had troubles with XWayland support (Not sure about that)
   services.xserver.enable = true;
   programs.xwayland.enable = true;
-
-  # Stating system's gpu driver, not needed in some cases
-  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Plasma Wayland as default
   services.displayManager.defaultSession = "plasma";

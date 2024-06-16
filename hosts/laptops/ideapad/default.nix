@@ -15,6 +15,9 @@
       ./hardware-configuration.nix
       ./network.nix
     ];
+  
+  # Stating system's gpu driver, not needed in some cases
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
     environment.systemPackages = with pkgs; [
       twingate

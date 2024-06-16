@@ -14,6 +14,9 @@
       ./gaming.nix
       ./vfio.nix
     ];
+  
+  # Stating system's gpu driver, not needed in some cases
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   boot.loader.grub.useOSProber = true;
 
