@@ -32,6 +32,9 @@
 
     pkgs-stable.handbrake # ffmpeg_7-full dependency is temporarily broken in the unstable channel
     i2c-tools # OpenRGB dependency
+
+    piper # GTK Frontend for gaming peripherals
+    solaar # Frontend for managing Logitech peripherals
   ];
 
   # RGB Configuration
