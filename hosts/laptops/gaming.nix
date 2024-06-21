@@ -9,7 +9,7 @@
   environment.systemPackages = with pkgs; [
     bottles # Wine manager
     protonup-qt
-    wineWowPackages.waylandFull
+    wineWowPackages.stagingFull
     obs-studio
     kdePackages.kdenlive
   ];
