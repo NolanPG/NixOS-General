@@ -126,6 +126,7 @@
   #  /etc/profiles/per-user/nolan/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    MOZ_USE_XINPUT2 = 1;
     # EDITOR = "emacs";
   };
 

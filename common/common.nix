@@ -33,13 +33,12 @@
   # Enabling SOUND
   # sound.enable = true;
   # hardware.pulseaudio.enable = false;
-  # security.rtkit.enable = true;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true; # a professional sound server daemon
     wireplumber.enable = true; # session and policy manager for PipeWire
   };
 
@@ -117,7 +116,12 @@
 
     qdirstat # App for managing disk space usage
 
+    # KDE Plasma dependencies
     kdePackages.appstream-qt # libsForQt5 is replaced by kdePackages to keep coherence for Plasma 6 naming
+    gsettings-qt # Dependency for sound management
+    gsettings-desktop-schemas
+    kdePackages.plasma-pa
+    kdePackages.pulseaudio-qt
 
     # peazip # Free Zip / Unzip software and Rar file extractor. Cross-platform file and archive manager.
     lutris
