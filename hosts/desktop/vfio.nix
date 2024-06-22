@@ -49,7 +49,7 @@ in {
 
     users.users.nolan.extraGroups = [ "libvirtd" ];
 
-    hardware.opengl.enable = true;
+    hardware.graphics.enable = true;
     virtualisation.spiceUSBRedirection.enable = true;
   };
   # Added libvirtd and apps for the virtual machine in configuration.nix
