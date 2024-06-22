@@ -44,11 +44,11 @@
   hardware.bluetooth.enable = true;
 
   #Enables Vulkan for AMD gpus
-  hardware.opengl.extraPackages = [
+  hardware.graphics.extraPackages = [
     pkgs.amdvlk
   ];
 
-  hardware.opengl.extraPackages32 = [
+  hardware.graphics.extraPackages32 = [
     pkgs.driversi686Linux.amdvlk
   ];
 
