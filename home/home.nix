@@ -45,6 +45,7 @@
     papirus-icon-theme
     vesktop # Patched Discord client
     brave # Brave Browser
+    floorp
     celluloid
 
     # # Adds the 'hello' command to your environment. It prints a friendly
