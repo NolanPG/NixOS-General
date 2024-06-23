@@ -8,7 +8,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    bottles # Wine manager
+    pkgs-stable.bottles # Wine manager
     heroic
     ryujinx # Nintendo Switch emulator
     sunshine # Remote gaming solution for streaming games over the internet
@@ -30,7 +30,7 @@
     
     kdePackages.kdenlive
 
-    pkgs-stable.handbrake # ffmpeg_7-full dependency is temporarily broken in the unstable channel
+    handbrake # ffmpeg_7-full dependency is temporarily broken in the unstable channel
     i2c-tools # OpenRGB dependency
 
     piper # GTK Frontend for gaming peripherals
@@ -74,7 +74,7 @@
   #Enable Gamescope
   programs.gamescope = {
     enable = true;
-    package = pkgs.gamescope;
+    package = pkgs-stable.gamescope;
     capSysNice = true;
     args = ["--prefer-vk-device 1002:73ef"];
     env = {
