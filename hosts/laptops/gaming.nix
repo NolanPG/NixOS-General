@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   lib,
   user,
   ...
@@ -7,7 +8,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    bottles # Wine manager
+    pkgs-stable.bottles # Wine manager
     protonup-qt
     wineWowPackages.stagingFull
     obs-studio
@@ -40,6 +41,5 @@
 
   programs.steam = {
     enable = true;
-    gamescopeSession.enable = true;
   };
 }
