@@ -43,10 +43,9 @@
     gh # GitHub CLI Tool
     python3
     papirus-icon-theme
-
     vesktop # Patched Discord client
-
     brave # Brave Browser
+    celluloid
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
