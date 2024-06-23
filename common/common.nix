@@ -122,6 +122,8 @@
     gsettings-desktop-schemas
     kdePackages.plasma-pa
     kdePackages.pulseaudio-qt
+    kdePackages.plasma-browser-integration
+    libnotify
 
     # peazip # Free Zip / Unzip software and Rar file extractor. Cross-platform file and archive manager.
     lutris
