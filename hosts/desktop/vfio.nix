@@ -25,7 +25,7 @@
   programs.virt-manager.enable = true;
 
   # VMWare
-  virtualisation.vmware.host.enable = true;
+  # virtualisation.vmware.host.enable = true;
 
   users.users.nolan.extraGroups = [ "libvirtd" ];
 
