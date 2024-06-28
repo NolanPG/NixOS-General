@@ -10,6 +10,7 @@
     [
       ./hardware-configuration.nix
       ../../common/common.nix
+      ../../common/xfce.nix
       ./network.nix
       ./gaming.nix
       ./vfio.nix
