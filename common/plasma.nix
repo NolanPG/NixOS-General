@@ -38,13 +38,9 @@
 
     # KDE Plasma dependencies
     kdePackages.appstream-qt # libsForQt5 is replaced by kdePackages to keep coherence for Plasma 6 naming
-    gsettings-qt # Dependency for sound management
-    gsettings-desktop-schemas
-    kdePackages.plasma-pa
-    kdePackages.pulseaudio-qt
-    kdePackages.plasma-browser-integration
-    kdePackages.signond
     libnotify
+
+    kde-rounded-corners
   ];
 
   environment.variables = {
