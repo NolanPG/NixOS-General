@@ -9,6 +9,7 @@
   imports =
     [
       ../../../common/common.nix
+      ../../../common/plasma.nix
       ../battery-life.nix
       ../touchpad.nix
       ../gaming.nix
