@@ -14,6 +14,7 @@
       ../touchpad.nix
       ../gaming.nix
       ./hardware-configuration.nix
+      ./keyboard/keyboard.nix
       ./network.nix
     ];
 
