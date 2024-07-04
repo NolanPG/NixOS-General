@@ -20,11 +20,17 @@
 
     hardware.sensor.iio.enable = true;
 
+      # Configure keymap in X11
+      services.xserver = {
+        xkb.layout = "gb";
+        xkb.variant = "extd";
+      };
 
-    environment.systemPackages = with pkgs; [
-      libinput
-      libinput-gestures
-    ];
+      # Configure console keymap
+      console.keyMap = "uk";
+
+      # Enable CUPS to print documents.
+      services.printing.enable = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older ` NixOS versions.
