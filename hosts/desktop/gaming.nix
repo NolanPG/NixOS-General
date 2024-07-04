@@ -29,6 +29,7 @@
     rav1e
     
     kdePackages.kdenlive
+    davinci-resolve
 
     handbrake # ffmpeg_7-full dependency is temporarily broken in the unstable channel
     i2c-tools # OpenRGB dependency
