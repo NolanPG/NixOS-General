@@ -28,8 +28,9 @@
     fdk-aac-encoder
     rav1e
     
-    kdePackages.kdenlive
+    # kdePackages.kdenlive Error because this package is built with Qt 6.7.1 and NixOS ships KDE Plasma with 6.7.2
     davinci-resolve
+    clinfo
 
     handbrake # ffmpeg_7-full dependency is temporarily broken in the unstable channel
     i2c-tools # OpenRGB dependency
@@ -38,12 +39,18 @@
     solaar # Frontend for managing Logitech peripherals
   ];
 
+  # OpenCL for Davinci Resolve
+  hardware.graphics.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+  ];
+
   # RGB Configuration
   services.hardware.openrgb = {
     enable = true;
     motherboard = "amd";
     package = pkgs.openrgb-with-all-plugins;
   };
+
   boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
   users.groups.i2c.members = [ "nolan" ]; # create i2c group and add default user to it
 
