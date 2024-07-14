@@ -85,7 +85,8 @@
     distrobox
 
     # Packages normally included in other distros by default
-    lshw 
+    lshw
+    httpie 
     wget
     git
     gh
