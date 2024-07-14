@@ -32,13 +32,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    libsForQt5.kservice # kbuildsycoca5
     kdePackages.sddm-kcm # sddm settings module
     libreoffice-qt-fresh
-
-    # KDE Plasma dependencies
-    kdePackages.appstream-qt # libsForQt5 is replaced by kdePackages to keep coherence for Plasma 6 naming
-    libnotify
 
     kde-rounded-corners
   ];
