@@ -19,6 +19,7 @@
     wineWowPackages.stagingFull
     
     obs-studio
+    kdePackages.kdenlive
     
     # obs-studio dependencies
     pciutils
