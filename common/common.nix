@@ -86,6 +86,7 @@
 
     # Packages normally included in other distros by default
     lshw
+    alsa-utils
     httpie 
     wget
     git
