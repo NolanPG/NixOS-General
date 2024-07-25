@@ -77,20 +77,20 @@
     shellIntegration.enableZshIntegration = true;
   };
 
-  programs.firefox = {
-    enable = true;
-    profiles.nolan = {
-      name = "nolan-default";
-      isDefault = true;
-      path = "/home/nolan/.mozilla/firefox/default";
-      settings = {
-        "gfx.webrender.all" = true;
-        "widget.use-xdg-desktop-portal.file-picker" = 1;
-      };
-    };
+  # programs.firefox = {
+  #   enable = true;
+  #   profiles.nolan = {
+  #     name = "nolan-default";
+  #     isDefault = true;
+  #     path = "/home/nolan/.mozilla/firefox/default";
+  #     settings = {
+  #       "gfx.webrender.all" = true;
+  #       "widget.use-xdg-desktop-portal.file-picker" = 1;
+  #     };
+  #   };
     
 
-  };
+  #};
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
