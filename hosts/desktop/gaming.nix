@@ -55,10 +55,10 @@
   users.groups.i2c.members = [ "nolan" ]; # create i2c group and add default user to it
 
   # Enable Steam
-  # programs.steam = {
-  #   enable = true;
-  #   gamescopeSession.enable = true;
-  # };
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
 
   # Enable gamemode
   programs.gamemode = {
