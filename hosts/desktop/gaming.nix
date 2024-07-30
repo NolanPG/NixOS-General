@@ -39,6 +39,9 @@
     libnotify
   ];
 
+  # Dependency for Logitech G502 Hero Lightspeed software like Solaar
+  hardware.logitech.wireless.enable = true;
+
   # OpenCL for Davinci Resolve
   # hardware.graphics.extraPackages = with pkgs; [
   #   rocmPackages.clr.icd
