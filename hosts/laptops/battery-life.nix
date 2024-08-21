@@ -1,11 +1,7 @@
 {config, lib, pkgs, ...}:
 
 {
-  powerManagement = {
-    enable = true;
-    powertop.enable = true;
-    cpuFreqGovernor = "powersave";
-  };
+  powerManagement.enable = true;
 
   services = {
     thermald.enable = true;
