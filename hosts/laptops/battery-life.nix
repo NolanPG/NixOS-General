@@ -5,11 +5,7 @@
 
   services = {
     thermald.enable = true;
-
-    system76-scheduler = {
-      enable = true;
-      useStockConfig = true;
-    };
+    auto-cpufreq.enable = true;
 
     power-profiles-daemon.enable = true;
   };

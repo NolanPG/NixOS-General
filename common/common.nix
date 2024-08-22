@@ -3,7 +3,7 @@
 {
   # Use the systemd-boot EFI boot loader.
   boot = {
-    # Setting latest released Linux Kernel from www.kernel.org
+    # Setting latest Linux Kernel released  from www.kernel.org
     kernelPackages = pkgs.linuxPackages_latest;
 
     # Enabling ntfs support
