@@ -1,19 +1,11 @@
 {config, lib, pkgs, ...}:
 
 {
-  powerManagement = {
-    enable = true;
-    powertop.enable = true;
-    cpuFreqGovernor = "powersave";
-  };
+  powerManagement.enable = true;
 
   services = {
     thermald.enable = true;
-
-    system76-scheduler = {
-      enable = true;
-      useStockConfig = true;
-    };
+    auto-cpufreq.enable = true;
 
     power-profiles-daemon.enable = true;
   };
