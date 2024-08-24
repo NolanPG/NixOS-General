@@ -35,12 +35,14 @@
     handbrake # ffmpeg_7-full dependency is temporarily broken in the unstable channel
     i2c-tools # OpenRGB dependency
 
-    solaar # Frontend for managing Logitech peripherals
+    solaar
+    piper
     libnotify
   ];
 
-  # Dependency for Logitech G502 Hero Lightspeed software like Solaar
+  # Dependency for Logitech G502 Hero Lightspeed software like Solaar and Piper
   hardware.logitech.wireless.enable = true;
+  services.ratbagd.enable = true;
 
   # OpenCL for Davinci Resolve
   # hardware.graphics.extraPackages = with pkgs; [
