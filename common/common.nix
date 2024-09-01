@@ -23,6 +23,14 @@
       };
     };
 
+    kernel = {
+      sysctl = {
+        "vm.dirty_bytes" = "50331648";
+        "vm.dirty_background_bytes" = "16777216";
+        "vm.max_map_count" = "1048576";
+      };
+    };
+
     # Modifications for a completely silent boot
     initrd.verbose = false;
     consoleLogLevel = 0;
