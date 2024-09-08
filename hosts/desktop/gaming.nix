@@ -56,6 +56,7 @@
     package = pkgs.openrgb-with-all-plugins;
   };
 
+  hardware.i2c.enable = true;
   boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
   users.groups.i2c.members = [ "nolan" ]; # create i2c group and add default user to it
 
