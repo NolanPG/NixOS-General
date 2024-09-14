@@ -18,6 +18,18 @@
 
   boot.loader.grub.useOSProber = true;
 
+  # Fix external speakers from muting on restart and having to disable it from alsamixer
+  systemd.services.amixer-auto-mute-disable = {
+    description = "Disable Auto-Mute Mode on Sound Card 2";
+    after = [ "sound.target" ];  # Ensure it runs after sound is available
+    wantedBy = [ "multi-user.target" ];
+
+    serviceConfig = {
+      ExecStart = "${pkgs.alsaUtils}/bin/amixer -c 2 set 'Auto-Mute Mode' Disabled";
+      Restart = "on-failure";
+    };
+  };
+
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older ` NixOS versions.
   #
