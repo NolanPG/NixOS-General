@@ -5,6 +5,9 @@
   ... 
 }:
 
+# let
+#   deepcool-monitor = import ./deepcool.nix { inherit pkgs lib; };
+# in
 {
   imports =
     [
@@ -17,6 +20,22 @@
     ];
 
   boot.loader.grub.useOSProber = true;
+
+  #DeepCool
+
+  # environment.systemPackages = with pkgs; [
+  #   deepcool-monitor
+  # ];
+
+  # systemd.services.deepcool-ak-series-digital = {
+  #   description = "DeepCool AK Series Digital Cooler Monitor";
+
+  #   serviceConfig.ExecStart = "${pkgs.python3}/bin/python ${deepcool-monitor}/bin/deepcool-ak-series-digital.py";
+  #   wantedBy = [ "default.target" ];
+
+  #   restartIfChanged = true;
+  #   serviceConfig.Restart = "always";
+  # };
 
   # Fix external speakers from muting on restart and having to disable it from alsamixer
   systemd.services.amixer-auto-mute-disable = {
