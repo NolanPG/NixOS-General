@@ -91,6 +91,9 @@
   environment.systemPackages = with pkgs; [
     distrobox
 
+    # Note taking app for school
+    xournalpp
+
     # Packages normally included in other distros by default
     lshw
     alsa-utils
