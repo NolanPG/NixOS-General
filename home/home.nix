@@ -69,7 +69,7 @@
     font.name = "MesloLGS NF";
     font.package = pkgs.meslo-lgs-nf;
     font.size = 11;
-    themeFile = "Tokyo Night";
+    themeFile = "tokyo_night_night";
     extraConfig = "
       background_opacity .85
       confirm_os_window_close 0
