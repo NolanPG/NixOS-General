@@ -20,6 +20,10 @@
   # Plasma 6 as the DE, for the time being it is only available in NixOS Unstable
   services.desktopManager.plasma6.enable = true;
 
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    discover
+  ];
+
   # Enabling XDG Portal to make GTK apps use the QT Portal when opening files or folders
   xdg.portal = {
     enable = true;
