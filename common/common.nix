@@ -126,11 +126,11 @@
     clinfo
 
     # Firefox dependencies
-    ffmpeg-full # ffmpeg 6, ffmpeg 7 full is temporalily
+    ffmpeg-full
     mailcap # Helper application and MIME type associations for file types
   
     # Installing packages for FN + Function keys to work on Wayland
-    kdePackages.plasma-wayland-protocols
+    # kdePackages.plasma-wayland-protocols
   ];
 
   # Enabling flatpak support, still have to run:

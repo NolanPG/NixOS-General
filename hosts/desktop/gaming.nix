@@ -86,19 +86,4 @@
   boot.kernel.sysctl = {
     "vm.max_map_count" = 2147483642;
   };
-
-  #Enable Gamescope
-  programs.gamescope = {
-    enable = true;
-    package = pkgs-stable.gamescope;
-    capSysNice = true;
-    args = ["--prefer-vk-device 1002:73ef"];
-    env = {
-      "__GLX_VENDOR_LIBRARY_NAME" = "amd";
-      "DRI_PRIME" = "1";
-      "MESA_VK_DEVICE_SELECT" = "pci:1002:73ef";
-      "__VK_LAYER_MESA_OVERLAY_CONFIG" = "ld.so.preload";
-      "DISABLE_LAYER_AMD_SWITCHABLE_GRAPHICS_1" = "1";
-    };
-  };
 }

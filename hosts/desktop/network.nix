@@ -57,18 +57,6 @@
     # };
   };
 
-  # Creating a WiFi HotSpot that launches on startup, note that doesn't appear in Plasma System Tray Network utility
-  networking.interfaces.wlan0.useDHCP = true; # DHCP is needed for wlan0 to be visible in other devices
-  services.create_ap = {
-    enable = true;
-    settings = {
-      INTERNET_IFACE = "enp8s0";
-      WIFI_IFACE = "wlan0";
-      SSID = "nolan-nixos";
-      PASSPHRASE = "awsqd1e23";
-    };
-  };
-
   # Enabling SSH
   services.openssh = {
     enable = true;
