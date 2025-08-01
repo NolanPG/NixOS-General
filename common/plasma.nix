@@ -29,10 +29,8 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      kdePackages.xdg-desktop-portal-kde
+      #kdePackages.xdg-desktop-portal-kde
     ];
-    # Force GTK apps to use QT FM for opening folders
-    # gtkUsePortal = true;
   };
 
   environment.systemPackages = with pkgs; [

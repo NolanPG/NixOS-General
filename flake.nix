@@ -29,7 +29,6 @@
     nixpkgs,
     nixpkgs-stable,
     home-manager,
-    nixvim,
     chaotic,
     ... 
     }:

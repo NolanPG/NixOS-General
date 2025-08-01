@@ -42,7 +42,7 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-kde
+      #kdePackages.xdg-desktop-portal-kde
     ];
     # Force GTK apps to use QT FM for opening folders
     # gtkUsePortal = true;
@@ -50,7 +50,7 @@
 
   # Enabling SOUND
   # sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -89,6 +89,7 @@
   users.defaultUserShell = pkgs.zsh;
 
   environment.systemPackages = with pkgs; [
+    vulkan-tools
     distrobox
 
     # Note taking app for school
