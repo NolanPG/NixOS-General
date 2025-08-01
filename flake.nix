@@ -40,26 +40,6 @@
     in {
 
     nixosConfigurations = {
-      laptop = lib.nixosSystem rec {
-        inherit system;
-
-        modules = [ 
-          ./hosts/laptops/ideapad/default.nix 
-          chaotic.nixosModules.default
-        ];
-
-        specialArgs = {
-          pkgs-stable = import nixpkgs-stable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        };
-      };
 
       laptop-yoga = lib.nixosSystem rec {
         inherit system;
@@ -96,10 +76,10 @@
             config.allowUnfree = true;
           };
 
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
+          # pkgs = import nixpkgs {
+          #   inherit system;
+          #   config.allowUnfree = true;
+          # };
         };
       };
     };
