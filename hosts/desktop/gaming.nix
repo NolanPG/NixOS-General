@@ -20,6 +20,7 @@
     winetricks
     wineWowPackages.stagingFull
     vesktop
+    arrpc # Rich Presence server for Vesktop
     nordvpn
     
     obs-studio
