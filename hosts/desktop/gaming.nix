@@ -24,6 +24,7 @@
     nordvpn
     
     obs-studio
+    easyeffects
     kdePackages.kdenlive
     
     # obs-studio dependencies
