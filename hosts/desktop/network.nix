@@ -6,6 +6,8 @@
 }:
 
 {
+  chaotic.nordvpn.enable = true;
+  
   # Enabling Wi-Fi
   networking = {
     hostName = "desktop";
@@ -16,10 +18,15 @@
 
     firewall = {
       allowedTCPPorts = [ 80 443 8080 8081 8000 8001 3000 6600 7201 ];
-      allowedUDPPorts = [ 80 443 8080 8081 8000 8001 3000 6600 7201 51820 ];
+      allowedUDPPorts = [ 80 443 1194 8080 8081 8000 8001 3000 6600 7201 51820 ];
       allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
       allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
+
+      checkReversePath = false;
     };
+
+    # Configure WakeUp On LAN:
+    interfaces.eno1.wakeOnLan.enable = true;
 
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";

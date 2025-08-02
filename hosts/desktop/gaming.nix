@@ -8,6 +8,8 @@
 
 {
   environment.systemPackages = with pkgs; [
+    mesa_git
+    lact
     pkgs-stable.bottles # Wine manager
     heroic
     ryujinx # Nintendo Switch emulator
@@ -17,6 +19,8 @@
     protonup-qt
     winetricks
     wineWowPackages.stagingFull
+    vesktop
+    nordvpn
     
     obs-studio
     kdePackages.kdenlive
@@ -40,6 +44,8 @@
     libnotify
   ];
 
+  chaotic.mesa-git.enable = true;
+
   # Dependency for Logitech G502 Hero Lightspeed software like Solaar and Piper
   hardware.logitech.wireless.enable = true;
   services.ratbagd.enable = true;
@@ -55,6 +61,24 @@
     motherboard = "amd";
     package = pkgs.openrgb-with-all-plugins;
   };
+
+  hardware.amdgpu.overdrive.enable = true;
+
+  systemd.services.lactd = {
+  description = "AMDGPU Control Daemon";
+  wantedBy = [ "multi-user.target" ];
+  after = [ "multi-user.target" ];
+  
+  serviceConfig = {
+    ExecStart = "${pkgs.lact}/bin/lact daemon";
+    Type = "simple";
+    # Run as root since we need direct hardware access
+    User = "root";
+    Group = "root";
+    Restart = "on-failure";
+    RestartSec = "5";
+  };
+};
 
   hardware.i2c.enable = true;
   boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];

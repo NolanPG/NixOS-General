@@ -94,6 +94,7 @@
 
     # Note taking app for school
     xournalpp
+    onlyoffice-desktopeditors
 
     # Packages normally included in other distros by default
     lshw
@@ -209,7 +210,12 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.nolan.isNormalUser = true;
-  users.users.nolan.extraGroups = [ "networkmanager" "wheel" "docker" ];
+
+  users.users.nolan = {
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" "wheel" "docker" "nordvpn" ];
+    shell = pkgs.zsh;
+  };
+
   nix.settings.trusted-users = [ "root" "nolan" ];
 }
