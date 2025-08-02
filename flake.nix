@@ -22,6 +22,13 @@
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
+      # to have it up-to-date or simply don't specify the nixpkgs input
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { 
@@ -30,38 +37,29 @@
     nixpkgs-stable,
     home-manager,
     chaotic,
+    zen-browser,
     ... 
-    }:
+    } @inputs:
 
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${system};
+
+      pkgsWithOverlays = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = [
+          chaotic.overlays.default
+        ];
+      };
+
+      pkgsStable = import nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in {
 
     nixosConfigurations = {
-
-      laptop-yoga = lib.nixosSystem rec {
-        inherit system;
-
-        modules = [ 
-          ./hosts/laptops/yoga/default.nix 
-          chaotic.nixosModules.default
-        ];
-
-        specialArgs = {
-          pkgs-stable = import nixpkgs-stable {
-            inherit system;
-            config.allowUnfree = true; 
-          };
-
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        };
-      };
-
       desktop = lib.nixosSystem {
         inherit system;
 
@@ -71,29 +69,36 @@
         ];
 
         specialArgs = {
-          pkgs-stable = import nixpkgs-stable {
-            inherit system;
-            config.allowUnfree = true;
-          };
+          pkgs-stable = pkgsStable;
+          pkgs = pkgsWithOverlays;
+        };
+      };
 
-          # pkgs = import nixpkgs {
-          #   inherit system;
-          #   config.allowUnfree = true;
-          # };
+      laptop = lib.nixosSystem rec {
+        inherit system;
+
+        modules = [ 
+          ./hosts/laptop/default.nix 
+          chaotic.nixosModules.default
+        ];
+
+        specialArgs = {
+          pkgs-stable = pkgsStable;
+          pkgs = pkgsWithOverlays;
         };
       };
     };
 
     homeConfigurations = {
       nolan = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = pkgsWithOverlays;
         modules = [ 
           ./home/home.nix 
-
           #nixvim.homeManagerModules.nixvim # error: gdtoolkit has been renamed to gdtoolkit_3 to distinguish from version 4
           #./home/neovim.nix
-
           ./home/vscodium/vscodium.nix
+
+          inputs.zen-browser.homeModules.beta
         ];
       };
     };

@@ -1,6 +1,7 @@
 { 
   config, 
   pkgs,
+  pkgs-stable,
   self,
   inputs,
   ... 
@@ -44,7 +45,6 @@
     python3
     papirus-icon-theme
     brave # Brave Browser
-    floorp
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -63,6 +63,9 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  programs.zen-browser.enable = true;
+  programs.floorp.enable = true;
 
   programs.kitty = {
     enable = true;

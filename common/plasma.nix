@@ -35,8 +35,6 @@
 
   environment.systemPackages = with pkgs; [
     kdePackages.sddm-kcm # sddm settings module
-    libreoffice-qt-fresh
-
     kde-rounded-corners
   ];
 
