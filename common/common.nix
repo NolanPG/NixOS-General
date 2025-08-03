@@ -95,6 +95,7 @@
     # Note taking app for school
     xournalpp
     onlyoffice-desktopeditors
+    libreoffice-qt
 
     # Packages normally included in other distros by default
     lshw
