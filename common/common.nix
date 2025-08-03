@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-stable, ... }:
 
 {
   # Use the systemd-boot EFI boot loader.
@@ -129,7 +129,7 @@
     clinfo
 
     # Firefox dependencies
-    ffmpeg-full
+    pkgs-stable.ffmpeg-full
     mailcap # Helper application and MIME type associations for file types
   
     # Installing packages for FN + Function keys to work on Wayland

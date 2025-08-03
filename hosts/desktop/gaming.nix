@@ -23,7 +23,7 @@
     arrpc # Rich Presence server for Vesktop
     nordvpn
     
-    obs-studio
+    pkgs-stable.obs-studio
     easyeffects
     kdePackages.kdenlive
     
